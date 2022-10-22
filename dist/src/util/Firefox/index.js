@@ -1,0 +1,13 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.userAgent = exports.fetchVersion = exports.oscpu = exports.appVersion = exports.appCodeName = void 0;
+var AppCodeName_1 = require("./AppCodeName");
+Object.defineProperty(exports, "appCodeName", { enumerable: true, get: function () { return AppCodeName_1.appCodeName; } });
+var AppVersion_1 = require("./AppVersion");
+Object.defineProperty(exports, "appVersion", { enumerable: true, get: function () { return AppVersion_1.appVersion; } });
+var OSCpu_1 = require("./OSCpu");
+Object.defineProperty(exports, "oscpu", { enumerable: true, get: function () { return OSCpu_1.oscpu; } });
+var Version_1 = require("./Version");
+Object.defineProperty(exports, "fetchVersion", { enumerable: true, get: function () { return Version_1.fetchVersion; } });
+var UserAgent_1 = require("./UserAgent");
+Object.defineProperty(exports, "userAgent", { enumerable: true, get: function () { return UserAgent_1.userAgent; } });
