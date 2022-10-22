@@ -1,0 +1,25 @@
+name: Build
+on: 
+  workflow_dispatch:
+  push:
+jobs:
+  install:
+    name: Build 🔧
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+    - uses: pnpm/action-setup@master
+      with:
+        version: latest
+    - uses: actions/setup-node@v3
+      with:
+        node-version: 'latest'
+        cache: 'pnpm'
+    - run: pnpm install
+    - name: Build 🔧
+      run: pnpm clean && pnpm build
+    - uses: corcc/publish@node
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        TASK_NAME: 🔧
+        TIMEZONE: 'Asia/Tokyo'
